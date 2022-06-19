@@ -14,8 +14,25 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.views.generic import TemplateView
+
+from django.conf import settings
+from django.conf.urls.static import static
+from album.views import CustomPasswordChangeView
 
 urlpatterns = [
+    # Admin
     path('admin/', admin.site.urls),
+    # Album
+    path('', include('album.urls')),
+    # allauth
+    path('email-confirmation-done/',
+    TemplateView.as_view(template_name='album/email_confirmation_done.html'),
+    name='account_email_confirmation_done',
+    ),
+    path('password/change/', CustomPasswordChangeView.as_view(), name='account_password_change'),
+    path('', include('allauth.urls')),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
