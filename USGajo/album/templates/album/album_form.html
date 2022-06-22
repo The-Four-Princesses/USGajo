@@ -2,11 +2,11 @@
 
 {% load widget_tweaks %}
 
-
+<!-- 글 수정 or 글 게시 -->
 {% block title %}
-  {% if album %} <!-- 글 수정 -->
+  {% if album %}
     {{ album.title }}
-  {% else %} <!-- 글 게시 -->
+  {% else %}
     새 포스트 작성
   {% endif %} | USGAJO
 {% endblock title %}
