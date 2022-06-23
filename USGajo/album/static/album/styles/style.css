@@ -89,13 +89,14 @@
   .site-footer {
     color: var(--site-footer);
     background-color: var(--site-footer-background);
+    align-items: center;
   }
   
   .site-footer .content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 95px;
+    min-height: 70px;
   }
   
   .max-width {
@@ -107,7 +108,15 @@
     max-width: var(--max-content-width);
     width: 100%;
   }
-  
+
+  .team-name{
+    margin:auto;
+  }
+
+  .team-name {
+    align-items: center;
+  }
+
   /* content-list */
   
   .content-list {

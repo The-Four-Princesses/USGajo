@@ -115,11 +115,12 @@ a.us-button {
 }
 
 .us-ic-button {
-  background-color: #ececec;
+  border:1px solid #c0c0c0;
   font-size: 20px;
   font-weight: bold;
-  border-radius: 5px;
-  padding: 3px;
+  color:#3a3a3a;
+  border-radius: 9999px;
+  padding: 10px;
 }
 
 /* Input */
