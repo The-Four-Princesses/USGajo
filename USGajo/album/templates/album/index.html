@@ -2,27 +2,17 @@
 
 {% block content %}
 <main class="site-body">
-  <div class="main-header">
-    <div class="content">
-      <div class="fg"></div>
-      <h1>사진첩</h1>
-    </div>
-  </div>
-
   <div class="content-list max-content-width">
     <div class="header">
       <h2>사진첩 목록</h2>
-      <a class="us-ic-button circle newalbum" href="{% url 'album-create' %}">게시글 작성</a>
+      <a class="us-ic-button newalbum" href="{% url 'album-create' %}">게시글 작성</a>
     </div>
 
       <div class="contents">
         {% for album in albums %}
           <a href="{% url 'album-detail' album.id %}">
             <section class="us-card content">
-              <image src="{{album.image1.url}}">
-              <!--
                 <div class="thumb" style="background-image: url('{{ album.image1.url }}');"></div>
-              -->
               <div class="body">
                 <h2 class="title">{{ album.title }}</h2>
                 <date class="date">{{ album.dt_created|date:"Y년 n월 j일" }}</date>

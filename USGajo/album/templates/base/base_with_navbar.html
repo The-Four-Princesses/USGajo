@@ -10,6 +10,8 @@
     </a>
     <nav>
       <ul class="navbar">
+          <li><a href="#">일기</a></li>
+          <li><a href="#">사진첩</a></li>
         {% if user.is_authenticated %}
           <li><a href="{% url 'account_logout' %}">로그아웃</a></li>
         {% else %}
@@ -25,8 +27,7 @@
 {% block footer %}
 <footer class="site-footer">
   <div class="max-content-width content">
-    <div></div>
-    <div>USGAJO</div>
+    <div class="team-name">2022, The-Four-Princesses</div>
   </div>
 </footer>
 {% endblock footer %}

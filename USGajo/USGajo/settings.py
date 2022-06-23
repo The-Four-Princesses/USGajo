@@ -40,10 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'album',
-    'allauth',
+    'widget_tweaks',
+    'allauth', # 항상 allauth보다 새로 만든 앱이 위에 와 있어야 함!
     'allauth.account',
     'allauth.socialaccount',
-    'widget_tweaks',
 ]
 
 SITE_ID = 1
