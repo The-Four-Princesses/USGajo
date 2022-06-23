@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'widget_tweaks',
+    'intro_program'
 ]
 
 SITE_ID = 1
@@ -155,3 +156,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/' # 앨범 위한 미디어 파일
+
+#SATATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]

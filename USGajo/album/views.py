@@ -13,7 +13,6 @@ from album.models import Album
 from album.forms import AlbumForm
 
 # Create your views here.
-
 class IndexView(ListView):
     model = Album
     template_name = 'album/index.html'

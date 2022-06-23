@@ -20,19 +20,23 @@ from django.views.generic import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
 from album.views import CustomPasswordChangeView
+from intro_program.views import *
 
 urlpatterns = [
     # Admin
     path('admin/', admin.site.urls),
     # Album
-    path('', include('album.urls')),
+    path('album/', include('album.urls')),
     # allauth
     path('email-confirmation-done/',
     TemplateView.as_view(template_name='album/email_confirmation_done.html'),
     name='account_email_confirmation_done',
     ),
     path('password/change/', CustomPasswordChangeView.as_view(), name='account_password_change'),
-    path('', include('allauth.urls')),
+    path('album/', include('allauth.urls')),
+    # Intro_program
+    path('', include('intro_program.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
