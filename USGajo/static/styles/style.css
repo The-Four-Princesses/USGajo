@@ -328,6 +328,9 @@
   .album-detail .content .thumb {
     display: block;
     margin: 0 auto;
+    max-width: 100%;
+    width: auto !important;
+    height: auto !important;
   }
   
   .album-detail .content .thumb:not(:last-child) {
@@ -338,19 +341,7 @@
     margin: 30px var(--album-detail-side-padding) 28px;
     line-height: 1.82;
   }
-  
-  .album-detail .content .location {
-    display: inline-flex;
-    align-items: center;
-    margin: var(--album-detail-side-padding);
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .album-detail .content .location > img {
-    margin-right: 5px;
-  }
-  
+
   .album-detail .footer {
     display: flex;
     justify-content: space-between;
@@ -569,4 +560,3 @@
   .album-author > :not(:last-child) {
     margin-right: 10px;
   }
-  

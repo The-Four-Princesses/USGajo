@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'common',
     'album',
     'widget_tweaks',
     'allauth', # 항상 allauth보다 새로 만든 앱이 위에 와 있어야 함!
@@ -63,7 +64,7 @@ ROOT_URLCONF = 'USGajo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR/ 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -95,7 +96,7 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'album.validators.CustomPasswordValidator',
+        'NAME': 'common.validators.CustomPasswordValidator',
     },
 ]
 
@@ -115,9 +116,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
+STATICFILES_DIRS =[ BASE_DIR / 'static', ]
 
-AUTH_USER_MODEL = 'album.User'
+AUTH_USER_MODEL = 'common.User'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -140,7 +142,7 @@ ACCOUNT_LOGOUT_ON_GET = True # 로그아웃할 때 진짜 로그아웃 하겠냐
 ACCOUNT_AUTHENTICATION_METHOD = 'email' # 이메일로 로그인하도록 설정
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_SIGNUP_FORM_CLASS = 'album.forms.SignupForm'
+ACCOUNT_SIGNUP_FORM_CLASS = 'common.forms.SignupForm'
 ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_PASSWORD_INPUT_RENDER_VALUE = True # 회원가입 시 비밀번호는 맞으면 초기화 안됨
 
