@@ -1,7 +1,6 @@
 import string
 from django.core.exceptions import ValidationError
 
-
 def contains_special_character(value):
     for char in value:
         if char in string.punctuation:

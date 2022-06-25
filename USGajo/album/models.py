@@ -1,15 +1,4 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
-from .validators import validate_no_special_characters
-
-class User(AbstractUser):
-    nickname = models.CharField(
-        max_length=15,
-        unique=True,
-        null=True,
-        validators=[validate_no_special_characters],
-        error_messages={'unique': '이미 사용 중인 닉네임입니다.'},
-    )
 
 class Album(models.Model):
     title = models.CharField(max_length=30) # 제목 30자 제한
@@ -21,7 +10,7 @@ class Album(models.Model):
     dt_created = models.DateTimeField(auto_now_add=True) # 글 게시 시간
     dt_updated = models.DateTimeField(auto_now=True) # 글 수정 시간
 
-    author = models.ForeignKey(User, on_delete=models.CASCADE) # 앨범 글 작성자
+    author = models.ForeignKey('common.User', on_delete=models.CASCADE) # 앨범 글 작성자
 
     def __str__(self):
         return self.title

@@ -27,11 +27,16 @@ urlpatterns = [
     # Album
     path('', include('album.urls')),
     # allauth
-    path('email-confirmation-done/',
-    TemplateView.as_view(template_name='album/email_confirmation_done.html'),
-    name='account_email_confirmation_done',
+    path(
+        'email-confirmation-done/',
+        TemplateView.as_view(template_name='album/email_confirmation_done.html'),
+        name='account_email_confirmation_done',
     ),
-    path('password/change/', CustomPasswordChangeView.as_view(), name='account_password_change'),
+    path(
+        'password/change/',
+        CustomPasswordChangeView.as_view(),
+        name='account_password_change',
+    ),
     path('', include('allauth.urls')),
 ]
 
