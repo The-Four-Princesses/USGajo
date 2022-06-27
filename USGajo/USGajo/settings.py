@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'allauth', # 항상 allauth보다 새로 만든 앱이 위에 와 있어야 함!
     'allauth.account',
     'allauth.socialaccount',
+    'diary',
 ]
 
 SITE_ID = 1

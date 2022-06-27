@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>일기 수정</title>
+</head>
+<body>
+<div>diary write</div>
+    <form method="POST" action="" enctype='multipart/form-data'>
+        {% csrf_token %}
+        날짜<br>
+        <input type="date" name="date"><br>
+        날씨<br>
+        <input type="text" name="weather"><br>
+        내용<br>
+        <textarea rows="10" cols="50" name="contents"></textarea><br>
+        <input type="file" name="mainphoto"><br>
+        <input type="submit" value="글쓰기">
+    </form>
+</body>
+</html>
