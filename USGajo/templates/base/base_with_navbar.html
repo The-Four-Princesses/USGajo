@@ -10,7 +10,7 @@
     </a>
     <nav>
       <ul class="navbar">
-          <li><a href="#">일기</a></li>
+          <li><a href="diary/">일기</a></li>
           <li><a href="#">사진첩</a></li>
         {% if user.is_authenticated %}
           <li><a href="{% url 'account_logout' %}">로그아웃</a></li>

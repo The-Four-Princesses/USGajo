@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>일기 목록</title>
+</head>
+<body>
+<h1>일기 목록</h1>
+<table>
+        {% for list in diarylist %}
+            <ul>
+                <li><a href="{{list.pk}}">{{list.date}} </a></li>
+            </ul>
+        {% endfor %}
+        </table>
+<button><a href="diaryWrite/">글쓰기</a></button>
+</body>
+</html>

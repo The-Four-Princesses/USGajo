@@ -38,6 +38,7 @@ urlpatterns = [
         name='account_password_change',
     ),
     path('', include('allauth.urls')),
+    path('', include('diary.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
